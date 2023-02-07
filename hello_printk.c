@@ -27,14 +27,14 @@ static int __init
 hello_init(void)
 {
 	printk("VAS Info Extractor!\n");
-	//printk("state offset in task struct: %lu\n",offsetof(struct task_struct,state));
+	printk("state offset in task struct: %lu\n",offsetof(struct task_struct,state));
 	printk("pid offset in task struct: %lu\n",offsetof(struct task_struct,pid));
 	printk("tgid offset in task struct: %lu\n",offsetof(struct task_struct,tgid));
 	printk("comm offset in task struct: %lu\n",offsetof(struct task_struct,comm));
 	printk("struct mm_struct mm offset in task struct: %lu\n",offsetof(struct task_struct,mm));
 	printk("struct files_struct files offset in task struct: %lu\n",offsetof(struct task_struct,files));
 	printk("struct task_struct real_parent offset in task struct: %lu\n",offsetof(struct task_struct,real_parent));
-	printk("task struct: %lu\n",struct task_struct);
+        printk("task struct: %p\n", &task_struct);
 
 	printk("pgd offset in struct mm_struct: %lu\n",offsetof(struct mm_struct,pgd));
 	printk("struct vm_area_strut *mmap offset in struct mm_struct: %lu\n",offsetof(struct mm_struct,mmap));
