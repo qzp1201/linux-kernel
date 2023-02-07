@@ -35,7 +35,7 @@ hello_init(void)
 	printk("struct files_struct files offset in task struct: %lu\n",offsetof(struct task_struct,files));
 	printk("struct task_struct real_parent offset in task struct: %lu\n",offsetof(struct task_struct,real_parent));        
 	//printk("task struct: %lx\n", __switch_to(struct task_struct));
-        printk("thread struct: %lx\n", __switch_to(struct thread_info,thread_info));
+        printk("thread struct: %lx\n", __switch_to(&struct thread_info));
 	
 	printk("pgd offset in struct mm_struct: %lu\n",offsetof(struct mm_struct,pgd));
 	printk("struct vm_area_strut *mmap offset in struct mm_struct: %lu\n",offsetof(struct mm_struct,mmap));
